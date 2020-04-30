@@ -5,6 +5,7 @@ export const About: React.FC = () => {
   return (
     <View>
       <Text>About</Text>
+      <Text>I am Mr. Villar</Text>
     </View>
   );
 };

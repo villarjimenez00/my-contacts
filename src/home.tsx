@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
-import { NavigationStackOptions } from "react-navigation-stack";
+import { NavigationStackOptions } from "react-navigation/stack";
 
 export const Home: React.FC<NavigationStackOptions> = ({ navigation }) => {
   return (
