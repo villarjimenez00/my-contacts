@@ -3,9 +3,10 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Home } from "./src/home";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { About } from "./src/about";
 
-const Stack = createStackNavigator();
+const Tabs = createBottomTabNavigator();
 
 const styles = StyleSheet.create({
   container: {
@@ -20,30 +21,14 @@ const styles = StyleSheet.create({
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
+      <Tabs.Navigator>
+        <Tabs.Screen
           name="Home"
           component={Home}
-          options={{
-            title: "Home",
-            headerStyle: {
-              backgroundColor: "#f4511e",
-            },
-            headerTintColor: "#fff",
-          }}
+          options={{ title: "Welcome" }}
         />
-        <Stack.Screen
-          name="About"
-          component={About}
-          options={{
-            title: "About",
-            headerStyle: {
-              backgroundColor: "#f4511e",
-            },
-            headerTintColor: "#fff",
-          }}
-        />
-      </Stack.Navigator>
+        <Tabs.Screen name="About" component={About} />
+      </Tabs.Navigator>
     </NavigationContainer>
   );
 }
